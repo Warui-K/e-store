@@ -1,6 +1,7 @@
 const express = require('express')
-const app = express()
+require('./utils/db.config')
 
+const app = express()
 app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
     try{

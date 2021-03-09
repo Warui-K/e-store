@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.11.19"
   },
   "devDependencies": {
     "chai": "^4.3.3",
@@ -24,5 +25,16 @@
     "eslint": "^7.21.0",
     "mocha": "^8.3.1",
     "nodemon": "^2.0.7"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Warui-K/e-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Warui-K/e-store/issues"
+  },
+  "homepage": "https://github.com/Warui-K/e-store#readme"
 }
