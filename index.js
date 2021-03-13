@@ -1,12 +1,17 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const User = require('./models/User')
 require('./utils/db.config')
+
+const authRoutes = require('./routes/authRoutes')
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.set('view engine', 'ejs')
+
+app.use('/', authRoutes)
+
+
 app.get('/', function (req, res) {
     try {
         return res.render('index');
@@ -16,20 +21,6 @@ app.get('/', function (req, res) {
     }
 });
 
-app.get('/register', function (req, res) {
-    try {
-        return res.render('register');
-    }
-    catch (e) {
-        return res.status(500).send('Internal Server Error')
-    }
-});
-
-app.post('/register', async (req, res) => { 
-    const user = new User(req.body)
-    await user.save()
-    return res.render('register', { message: 'Registration successful' })
-})
 
 app.listen(3000, function () {
     console.log("Server running at port 3000");
